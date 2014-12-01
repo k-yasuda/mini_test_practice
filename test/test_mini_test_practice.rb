@@ -21,12 +21,21 @@ class TestMiniTestPractice < MiniTest::Unit::TestCase
   def test_divide
 #    assert_raise(Exception){@my_class.divide(10,2)}
     assert_equal true, @my_class.divide(10,2)
+    assert_throws :Exit do
+        @my_class.divide(4,2)
+    end
   end
   def test_fizz_buzz
     assert_equal :Fizz, @my_class.fizz_buzz(3)
     assert_equal :Buzz, @my_class.fizz_buzz(5)
     assert_equal :FizzBuzz, @my_class.fizz_buzz(15)
   end
-
+  def test_hello
+    out, err=capture_io do
+      @my_class.hello 
+    end
+    out
+    err
+  end
 end
 

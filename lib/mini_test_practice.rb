@@ -30,6 +30,8 @@ module MiniTestPractice
           y = a % b
           if y==0 then
           return true
+#           y=a/b
+#           return y
           end
       end
       def fizz_buzz(value)
@@ -38,10 +40,11 @@ module MiniTestPractice
           return :Fizz if value % 3 == 0
           value
       end      
-      def hello(value)
-          put ("Hello")
+      def hello()
+          puts "hello"
+#          $stderr.put "world"
       end
-    end
+     end
 end
 
 
